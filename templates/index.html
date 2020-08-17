@@ -24,16 +24,66 @@
     </sytle>
 </head>
 <body>
-<section class="hero is-warning">
-    <div class="hero-body">
-        <div class="container center">
-            <h1 class="title">원펀치 퇴직연금 금리</h1>
-            <h9 class="subtitle">* 본 페이지는 공식 자료가 아니므로 크고작은 오류가 있을 수 있으며 참고로만 활용하시기 바랍니다 *</h9>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h1 class="my-0 mr-md-auto font-weight-normal">원펀치 퇴직연금 금리</h1> <br>
+    <h9>* 본 페이지는 공식 자료가 아니므로 크고작은 오류가 있을 수 있으며 참고로만 활용하시기 바랍니다 *</h9>
+</div>
+<div class=" p-3 px-md-4 mb-3 border-bottom shadow-sm">
+    <h4 class="mb-3">비교묶음</h4>
+    <div class="d-block my-3">
+        <div class="custom-control custom-radio">
+            <input id="allSectors" name="groupHow" type="radio" class="custom-control-input" checked="" required="">
+            <label class="custom-control-label" for="allSectors">전체 업권으로 비교하기</label>
+        </div>
+        <div class="custom-control custom-radio">
+            <input id="bySectorsTotal" name="groupHow" type="radio" class="custom-control-input" required="">
+            <label class="custom-control-label" for="bySectorsTotal">업권별로 묶기 (손/생보 통합)</label>
+        </div>
+        <div class="custom-control custom-radio">
+            <input id="bySectorsDiv" name="groupHow" type="radio" class="custom-control-input" required="">
+            <label class="custom-control-label" for="bySectorsDiv">업권별로 묶기 (손/생보 별도)</label>
         </div>
     </div>
-</section>
-<div>
-    // 조회 필터가 들어갈 자리 //
+    <h4 class="mb-3">순위기준</h4>
+    <div class="d-block my-3">
+        <div class="custom-control custom-radio">
+            <input id="by_floatRate" name="by_which" type="radio" class="custom-control-input" checked="" required="">
+            <label class="custom-control-label" for="by_floatRate">금리연동(RP)</label>
+        </div>
+        <div class="custom-control custom-radio">
+            <input id="by_db1y" name="by_which" type="radio" class="custom-control-input" checked="" required="">
+            <label class="custom-control-label" for="by_db1y">DB 1년</label>
+        </div>
+        <div class="custom-control custom-radio">
+            <input id="by_db2y" name="by_which" type="radio" class="custom-control-input" checked="" required="">
+            <label class="custom-control-label" for="by_db2y">DB 2년</label>
+        </div>
+        <div class="custom-control custom-radio">
+            <input id="by_db3y" name="by_which" type="radio" class="custom-control-input" checked="" required="">
+            <label class="custom-control-label" for="by_db3y">DB 3년</label>
+        </div>
+        <div class="custom-control custom-radio">
+            <input id="by_db5y" name="by_which" type="radio" class="custom-control-input" checked="" required="">
+            <label class="custom-control-label" for="by_db5y">DB 5년</label>
+        </div>
+        <div class="custom-control custom-radio">
+            <input id="by_dc1y" name="by_which" type="radio" class="custom-control-input" checked="" required="">
+            <label class="custom-control-label" for="by_dc1y">DC 1년</label>
+        </div>
+        <div class="custom-control custom-radio">
+            <input id="by_dc2y" name="by_which" type="radio" class="custom-control-input" checked="" required="">
+            <label class="custom-control-label" for="by_dc2y">DC 2년</label>
+        </div>
+        <div class="custom-control custom-radio">
+            <input id="by_dc3y" name="by_which" type="radio" class="custom-control-input" checked="" required="">
+            <label class="custom-control-label" for="by_dc3y">DC 3년</label>
+        </div>
+        <div class="custom-control custom-radio">
+            <input id="by_dc5y" name="by_which" type="radio" class="custom-control-input" checked="" required="">
+            <label class="custom-control-label" for="by_dc5y">DC 5년</label>
+        </div>
+    </div>
+    <button>조회</button>
 </div>
 <br>
 <div>
@@ -41,54 +91,56 @@
 </div>
 <br>
 <table class="table table-bordered table-striped">
-  <thead>
+    <thead>
     <tr>
-      <th></th>
-      <th class="text-center">
-        금리연동형<br>
-        <small>(RP)</small>
-      </th>
-      <th class="text-center">
-        DB<br>
-        <small>1년</small>
-      </th>
-      <th class="text-center">
-        DB<br>
-        <small>2년</small>
-      </th>
-      <th class="text-center">
-        DB<br>
-        <small>3년</small>
-      </th>
-      <th class="text-center">
-        DB<br>
-        <small>5년</small>
-      </th>
+        <th></th>
+        <th class="text-center">
+            금리연동형<br>
+            <small>(RP)</small>
+        </th>
+        <th class="text-center">
+            DB<br>
+            <small>1년</small>
+        </th>
+        <th class="text-center">
+            DB<br>
+            <small>2년</small>
+        </th>
+        <th class="text-center">
+            DB<br>
+            <small>3년</small>
+        </th>
+        <th class="text-center">
+            DB<br>
+            <small>5년</small>
+        </th>
     </tr>
-  </thead>
-  <tbody>
+    </thead>
+    <tbody>
     <tr>
-      <th class="text-nowrap" scope="row">KB손해보험</th>
-      <td>None (auto)</td>
-      <td>540px</td>
-      <td>720px</td>
-      <td>960px</td>
-      <td>1140px</td>
+        <th class="text-nowrap" scope="row">KB손해보험</th>
+        <td>None (auto)</td>
+        <td>540px</td>
+        <td>720px</td>
+        <td>960px</td>
+        <td>1140px</td>
     </tr>
     <tr>
-      <th class="text-nowrap" scope="row">삼성생명</th>
-      <td>1.25</td>
-      <td>1.30</td>
-      <td>1.35</td>
-      <td>1.40</td>
-      <td>1.45</td>
+        <th class="text-nowrap" scope="row">삼성생명</th>
+        <td>1.25</td>
+        <td>1.30</td>
+        <td>1.35</td>
+        <td>1.40</td>
+        <td>1.45</td>
     </tr>
-  </tbody>
+    </tbody>
 </table>
 <br>
 <div>
-    <h9>데이터 업데이트 : 2020. 07. 28. // 이건 바꾼당. ${}이런거 써서 </h9> <br>
-    <h9>Report issues: nomorenogada@gmail.com </h9> <br>
+    <h9>데이터 업데이트 : 2020. 07. 28. // 이건 바꾼당. ${}이런거 써서</h9>
+    <br>
+    <h9>Report issues: nomorenogada@gmail.com</h9>
+    <br>
     <h9>Powered by: 노가다해방전선 // 이건 로고 폰트 바꾼당</h9>
 </div>
 </body>
