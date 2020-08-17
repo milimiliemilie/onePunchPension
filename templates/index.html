@@ -22,72 +22,52 @@
 
     <sytle>
     </sytle>
+
 </head>
 <body>
-<div class="py-5 text-center border-bottom">
+<div class="py-5 text-center border-bottom"
+     style="background-color:pink; color:white;">
     <h2>원펀치 퇴직연금 금리</h2>
     <p class="lead">* 본 페이지는 공식 자료가 아니므로 크고작은 오류가 있을 수 있으며 참고로만 활용하시기 바랍니다 *</p>
 </div>
-<div class=" p-3 px-md-4 mb-3 border-bottom shadow-sm">
-    <h4 class="mb-3">비교묶음</h4>
-    <div class="d-block my-3">
-        <div class="custom-control custom-radio">
-            <input id="allSectors" name="groupHow" type="radio" class="custom-control-input" checked="" required="">
-            <label class="custom-control-label" for="allSectors">전체 업권으로 비교하기</label>
+<br>
+
+    <div class="bd-example mx-auto" style="width: 500px;">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">비교묶음</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect01">
+                <option value="1">전체 업권으로 비교하기</option>
+                <option selected value="2">업권별로 묶기 (손/생보 통합)</option>
+                <option value="3">업권별로 묶기 (손/생보 별도)</option>
+            </select>
         </div>
-        <div class="custom-control custom-radio">
-            <input id="bySectorsTotal" name="groupHow" type="radio" class="custom-control-input" required="">
-            <label class="custom-control-label" for="bySectorsTotal">업권별로 묶기 (손/생보 통합)</label>
-        </div>
-        <div class="custom-control custom-radio">
-            <input id="bySectorsDiv" name="groupHow" type="radio" class="custom-control-input" required="">
-            <label class="custom-control-label" for="bySectorsDiv">업권별로 묶기 (손/생보 별도)</label>
-        </div>
-    </div>
-    <h4 class="mb-3">순위기준</h4>
-    <div class="d-block my-3">
-        <div class="custom-control custom-radio">
-            <input id="by_floatRate" name="by_which" type="radio" class="custom-control-input" checked="" required="">
-            <label class="custom-control-label" for="by_floatRate">금리연동(RP)</label>
-        </div>
-        <div class="custom-control custom-radio">
-            <input id="by_db1y" name="by_which" type="radio" class="custom-control-input" checked="" required="">
-            <label class="custom-control-label" for="by_db1y">DB 1년</label>
-        </div>
-        <div class="custom-control custom-radio">
-            <input id="by_db2y" name="by_which" type="radio" class="custom-control-input" checked="" required="">
-            <label class="custom-control-label" for="by_db2y">DB 2년</label>
-        </div>
-        <div class="custom-control custom-radio">
-            <input id="by_db3y" name="by_which" type="radio" class="custom-control-input" checked="" required="">
-            <label class="custom-control-label" for="by_db3y">DB 3년</label>
-        </div>
-        <div class="custom-control custom-radio">
-            <input id="by_db5y" name="by_which" type="radio" class="custom-control-input" checked="" required="">
-            <label class="custom-control-label" for="by_db5y">DB 5년</label>
-        </div>
-        <div class="custom-control custom-radio">
-            <input id="by_dc1y" name="by_which" type="radio" class="custom-control-input" checked="" required="">
-            <label class="custom-control-label" for="by_dc1y">DC 1년</label>
-        </div>
-        <div class="custom-control custom-radio">
-            <input id="by_dc2y" name="by_which" type="radio" class="custom-control-input" checked="" required="">
-            <label class="custom-control-label" for="by_dc2y">DC 2년</label>
-        </div>
-        <div class="custom-control custom-radio">
-            <input id="by_dc3y" name="by_which" type="radio" class="custom-control-input" checked="" required="">
-            <label class="custom-control-label" for="by_dc3y">DC 3년</label>
-        </div>
-        <div class="custom-control custom-radio">
-            <input id="by_dc5y" name="by_which" type="radio" class="custom-control-input" checked="" required="">
-            <label class="custom-control-label" for="by_dc5y">DC 5년</label>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect02">순위기준</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect02">
+                <option value="1">금리연동(RP)</option>
+                <option selected value="2">DB 1년</option>
+                <option value="3">DB 2년</option>
+                <option value="3">DB 3년</option>
+                <option value="3">DB 5년</option>
+                <option value="2">DC/IRP 1년</option>
+                <option value="3">DC/IRP 2년</option>
+                <option value="3">DC/IRP 3년</option>
+                <option value="3">DC/IRP 5년</option>
+            </select>
         </div>
     </div>
-    <button>조회</button>
+
+<br/>
+<div class="text-center">
+    <button type="button" class="btn" style="background-color:hotpink; color:white;">조회</button>
 </div>
 <br>
 <div class="text-right">
-    <button>엑셀내리기</button>
+    <button type="button" class="btn" style="background-color:green; color:white;">엑셀내리기</button>
 </div>
 <br>
 <table class="table table-bordered table-striped text-center">
