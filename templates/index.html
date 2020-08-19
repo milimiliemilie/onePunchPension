@@ -6,22 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Optional JavaScript --> <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
+          integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+          crossorigin="anonymous"></script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
+          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+          crossorigin="anonymous"></script>
+
+    <!-- Google Fonts -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap" rel="stylesheet">
 
     <title>원펀치퇴직연금</title>
 
-    <sytle>
-    </sytle>
+<!--    <script data-ad-client="ca-pub-4295741603974812" async-->
+<!--            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
+
+    <!-- Style -->
+
+    <style>
+        * {
+            font-family: 'Nanum Gothic', sans-serif;
+        }
+
+        .grey_text {
+            color: grey;
+            font-weight: 400;
+        }
+
+        .songmyung_text {
+            font-family: 'Song Myung', serif;
+        }
+
+    </style>
 
 </head>
 <body>
@@ -32,34 +55,34 @@
 </div>
 <br>
 
-    <div class="bd-example mx-auto" style="width: 500px;">
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect01">비교묶음</label>
-            </div>
-            <select class="custom-select" id="inputGroupSelect01">
-                <option value="1">전체 업권으로 비교하기</option>
-                <option selected value="2">업권별로 묶기 (손/생보 통합)</option>
-                <option value="3">업권별로 묶기 (손/생보 별도)</option>
-            </select>
+<div class="bd-example mx-auto" style="width: 500px;">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">비교묶음</label>
         </div>
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect02">순위기준</label>
-            </div>
-            <select class="custom-select" id="inputGroupSelect02">
-                <option value="1">금리연동(RP)</option>
-                <option selected value="2">DB 1년</option>
-                <option value="3">DB 2년</option>
-                <option value="3">DB 3년</option>
-                <option value="3">DB 5년</option>
-                <option value="2">DC/IRP 1년</option>
-                <option value="3">DC/IRP 2년</option>
-                <option value="3">DC/IRP 3년</option>
-                <option value="3">DC/IRP 5년</option>
-            </select>
-        </div>
+        <select class="custom-select" id="inputGroupSelect01">
+            <option value="1">전체 업권으로 비교하기</option>
+            <option selected value="2">업권별로 묶기 (손/생보 통합)</option>
+            <option value="3">업권별로 묶기 (손/생보 별도)</option>
+        </select>
     </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect02">순위기준</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect02">
+            <option value="1">금리연동(RP)</option>
+            <option selected value="2">DB 1년</option>
+            <option value="3">DB 2년</option>
+            <option value="3">DB 3년</option>
+            <option value="3">DB 5년</option>
+            <option value="2">DC/IRP 1년</option>
+            <option value="3">DC/IRP 2년</option>
+            <option value="3">DC/IRP 3년</option>
+            <option value="3">DC/IRP 5년</option>
+        </select>
+    </div>
+</div>
 
 <br/>
 <div class="text-center">
@@ -147,12 +170,13 @@
     </tbody>
 </table>
 <br>
-<div>
+<div class="grey_text">
     <h9>데이터 업데이트 : 2020. 07. 28. // 이건 바꾼당. ${}이런거 써서</h9>
     <br>
     <h9>Report issues: nomorenogada@gmail.com</h9>
     <br>
-    <h9>Powered by: 노가다해방전선 // 이건 로고 폰트 바꾼당</h9>
+    <h9>Powered by: <text class="songmyung_text">노가다해방전선</text></h9>
 </div>
+<br>
 </body>
 </html>
