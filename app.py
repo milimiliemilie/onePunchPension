@@ -1,3 +1,4 @@
+import pymongo
 from flask import Flask, render_template, jsonify, request
 import requests
 from pymongo import MongoClient  # pymongo를 임포트 하기(패키지 인스톨 먼저 해야겠죠?)
@@ -15,11 +16,11 @@ def home():
 
 
 @app.route('/rates', methods=['GET'])
-def read_rates():
+def show_rates():
     # 1. mongoDB에서 _id 값을 제외한 모든 데이터 조회해오기(Read)
     # 조건 없이 다 검색한다 ==> {}
     # _id 는 다 뺴고 가져와라 ==> {'_id': 0}
-    rates = list(db.penrate.find({}, {'_id': 0}))
+    rates = list(db.penrate.find({}, {'_id': 0}).sort("db1y", pymongo.DESCENDING))
 
     # 2. articles라는 키 값으로 articles 정보 보내주기
     result = {
@@ -28,6 +29,7 @@ def read_rates():
     }
     return jsonify(result)
 
+# 이 아래는 제일 밑으로.
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)
 

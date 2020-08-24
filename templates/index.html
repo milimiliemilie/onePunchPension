@@ -76,6 +76,7 @@
                 }
             })
         }
+
     </script>
 
     <!-- Google Fonts -->
@@ -151,36 +152,41 @@
     </div>
     <div class="input-group mb-3">
         <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">비교묶음</label>
+            <label class="input-group-text" for="inputGroupSelectGubun">비교묶음</label>
         </div>
-        <select class="custom-select" id="inputGroupSelect01">
-            <option value="1">전체 업권으로 비교하기</option>
-            <option selected value="2">업권별로 묶기 (손/생보 통합)</option>
-            <option value="3">업권별로 묶기 (손/생보 별도)</option>
+        <select class="custom-select" id="inputGroupSelectGubun">
+            <option value="gubun_all">전체 업권으로 비교하기</option>
+            <option selected value="gubun_insAll">업권별로 묶기 (손/생보 통합)</option>
+            <option value="gubun_insDiff">업권별로 묶기 (손/생보 별도)</option>
         </select>
     </div>
     <div class="input-group mb-3">
         <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect02">순위기준</label>
+            <label class="input-group-text" for="inputGroupSelectProduct">순위기준</label>
         </div>
-        <select class="custom-select" id="inputGroupSelect02">
-            <option value="1">금리연동(RP)</option>
-            <option selected value="2">DB 1년</option>
-            <option value="3">DB 2년</option>
-            <option value="3">DB 3년</option>
-            <option value="3">DB 5년</option>
-            <option value="2">DC/IRP 1년</option>
-            <option value="3">DC/IRP 2년</option>
-            <option value="3">DC/IRP 3년</option>
-            <option value="3">DC/IRP 5년</option>
+        <select class="custom-select" id="inputGroupSelectProduct">
+            <option value="floatRate">금리연동(RP)</option>
+            <option selected value="db1y">DB 1년</option>
+            <option value="db2y">DB 2년</option>
+            <option value="db3y">DB 3년</option>
+            <option value="db5y">DB 5년</option>
+            <option value="dc1y">DC/IRP 1년</option>
+            <option value="dc2y">DC/IRP 2년</option>
+            <option value="dc3y">DC/IRP 3년</option>
+            <option value="dc5y">DC/IRP 5년</option>
         </select>
     </div>
 </div>
 
 <br/>
+<!-- 이 버튼이 조회버튼이야 -->
 <div class="text-center">
-    <button type="button" class="btn" style="background-color:hotpink; color:white;">조회</button>
+    <button type="button" class="btn"
+            onclick="alert($('#inputGroupSelectProduct').val())"
+            style="background-color:hotpink; color:white;">조회
+    </button>
 </div>
+<!-- 위에가 조회버튼 -->
 <br>
 <div class="text-right">
     <button type="button" class="btn" style="background-color:green; color:white;">엑셀내리기</button>
