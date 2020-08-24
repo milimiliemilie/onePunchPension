@@ -1,3 +1,5 @@
+import pprint
+
 import pymongo
 from flask import Flask, render_template, jsonify, request
 import requests
@@ -27,6 +29,21 @@ def show_rates():
         'result': 'success',
         'rates': rates,
     }
+    return jsonify(result)
+
+@app.route('/rates/filtered', methods=['GET'])
+def show_rates_filtered():
+    rates = list(db.penrate.find({}, {'_id': 0}).sort("floatRate", pymongo.DESCENDING))
+
+    # filter_receive = request.args['product']
+
+    # 2. articles라는 키 값으로 articles 정보 보내주기
+    result = {
+        'result': 'success',
+        'rates': rates,
+    }
+    pprint.pprint(result)
+
     return jsonify(result)
 
 # 이 아래는 제일 밑으로.

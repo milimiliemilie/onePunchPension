@@ -77,6 +77,71 @@
             })
         }
 
+        function filterRates() {
+
+            // var filterUrl
+            //
+            // if ($('#inputGroupSelectProduct').val() == "floatRate") {
+            //     filterUrl = "/rates/floatRate";
+            //     return filterUrl;
+            // } else {
+            //     alert('notFloatRate');
+            // }
+
+            $.ajax({
+                type: "GET",
+                // url: `/rates/filtered?product=${filterUrl}`,
+                url: "/rates/filtered",
+                data: {},
+                success: function (response) {
+                    if (response["result"] == "success") {
+                        // window.location.reload();
+                        $("#tbodyRates").html("");
+                        var rates = response['rates']
+                        for (let i = 0; i < rates.length; i++) {
+                            var rate = rates[i];
+
+                            var coNum = rate['coNum'];
+                            var coName = rate['coName'];
+                            var floatRate = rate['floatRate'];
+                            var db1y = rate['db1y'];
+                            var db2y = rate['db2y'];
+                            var db3y = rate['db3y'];
+                            var db5y = rate['db5y'];
+                            var dc1y = rate['dc1y'];
+                            var dc2y = rate['dc2y'];
+                            var dc3y = rate['dc3y'];
+                            var dc5y = rate['dc5y'];
+                            var gubun = rate['gubun'];
+                            var period = rate['period'];
+                            var bank_check = rate['bank_check'];
+
+
+                            var tempHtml = `
+    <tr>
+        <th class="text-nowrap" scope="row">1</th>
+        <th class="text-nowrap" scope="row">${gubun}</th>
+        <th class="text-nowrap" scope="row">${coName}</th>
+        <td class="">${floatRate}<br><small>+3</small></td>
+        <td class="">${db1y}<br><small>+3</small></td>
+        <td class="">${db2y}<br><small>+3</small></td>
+        <td class="">${db3y}<br><small>+3</small></td>
+        <td class="">${db5y}<br><small>+3</small></td>
+        <td class="">${dc1y}<br><small>+3</small></td>
+        <td class="">${dc2y}<br><small>+3</small></td>
+        <td class="">${dc3y}<br><small>+3</small></td>
+        <td class="">${dc5y}<br><small>+3</small></td>
+        <td class=""><small>${period}</small></td>
+        <td class=""><small>${bank_check}</small></td>
+    </tr>
+                            `
+                            $('#tbodyRates').append(tempHtml);
+                        }
+                    }
+                }
+            })
+        }
+
     </script>
 
     <!-- Google Fonts -->
@@ -182,8 +247,10 @@
 <!-- 이 버튼이 조회버튼이야 -->
 <div class="text-center">
     <button type="button" class="btn"
-            onclick="alert($('#inputGroupSelectProduct').val())"
-            style="background-color:hotpink; color:white;">조회
+            onclick="filterRates()"
+            style="background-color:hotpink; color:white;">
+        <!-- onclick="alert($('#inputGroupSelectProduct').val())" -->
+        조회
     </button>
 </div>
 <!-- 위에가 조회버튼 -->
