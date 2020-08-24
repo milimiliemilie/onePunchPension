@@ -111,174 +111,174 @@ listSet = [
      'product_db': '퇴직연금 전용 정기예금(DB)',
      'product_dc': '퇴직연금 전용 정기예금(DC/IRP)'
      },
-    # {'companySet': 'DB생명',
-    #  'coNum': '',
-    #  'product_floatRate': '무배당 동부 자산관리 퇴직연금보험 금리연동형(DB)',
-    #  'product_db': '무배당 동부 자산관리 퇴직연금보험 이율보증형(DB)',
-    #  'product_dc': '무배당 동부 자산관리 퇴직연금보험 이율보증형(DC)'
-    #  },
-    # {'companySet': 'DB손보',
-    #  'coNum': '',
-    #  'product_floatRate': '프로미 금리연동형보험(DB)',
-    #  'product_db': '프로미 원리금보장형보험(DB)',
-    #  'product_dc': '프로미 원리금보장형보험(DC)'
-    #  },
-    # {'companySet': 'IBK기업은행',
-    #  'coNum': '',
-    #  'product_floatRate': '',
-    #  'product_db': 'IBK퇴직연금 정기예금(DB)',
-    #  'product_dc': 'IBK퇴직연금정기예금(DC/IRP)'
-    #  },
-    # {'companySet': 'IBK연금보험',
-    #  'coNum': '',
-    #  'product_floatRate': '',
-    #  'product_db': 'IBK연금보험 이율보증형(DB)',
-    #  'product_dc': 'IBK연금보험 이율보증형(DC)'
-    #  },
-    # {'companySet': 'KB국민은행',
-    #  'coNum': '',
-    #  'product_floatRate': '',
-    #  'product_db': 'KB퇴직연금정기예금(DB)',
-    #  'product_dc': 'KB퇴직연금정기예금(DC/IRP)'
-    #  },
-    # {'companySet': 'KB손보',
-    #  'coNum': '',
-    #  'product_floatRate': '금리연동형(DB)',
-    #  'product_db': 'KB손보 이율보증형(DB)',
-    #  'product_dc': 'KB손보 이율보증형(DC)'
-    #  },
-    # {'companySet': 'KDB산업은행',
-    #  'coNum': '',
-    #  'product_floatRate': '',
-    #  'product_db': 'KDBpension정기예금(DB)',
-    #  'product_dc': 'KDBpension정기예금(DC/IRP)'
-    #  },
-    # {'companySet': 'KDB생명',
-    #  'coNum': '',
-    #  'product_floatRate': '금리연동형(DB)',
-    #  'product_db': 'KDB생명 이율보증형(DB)',
-    #  'product_dc': '금리연동형(DB)'
-    #  },
-    # {'companySet': 'KEB하나은행',
-    #  'coNum': '',
-    #  'product_floatRate': '',
-    #  'product_db': '퇴직연금용 정기예금(DB)',
-    #  'product_dc': '퇴직연금용 정기예금(DC/IRP)'
-    #  },
-    # {'companySet': 'NH농협은행',
-    #  'coNum': '',
-    #  'product_floatRate': '',
-    #  'product_db': '퇴직연금정기예금(DB)',
-    #  'product_dc': '퇴직연금정기예금(DC/IRP)'
-    #  },
-    # {'companySet': '광주은행',
-    #  'coNum': '',
-    #  'product_floatRate': '',
-    #  'product_db': '퇴직연금전용정기예금(DB)',
-    #  'product_dc': '퇴직연금전용정기예금(DC/IRP)'
-    #  },
-    # {'companySet': '교보생명',
-    #  'coNum': '',
-    #  'product_floatRate': '(무)교보 금리연동형(DB)',
-    #  'product_db': '교보생명 이율보증형보험(DB)',
-    #  'product_dc': '교보생명 이율보증형보험(DC)'
-    #  },
-    # {'companySet': '동양생명',
-    #  'coNum': '',
-    #  'product_floatRate': '동양생명 금리연동형(DB)',
-    #  'product_db': '동양생명 이율보증형(DB)',
-    #  'product_dc': '동양생명 이율보증형(DC)'
-    #  },
-    # {'companySet': '롯데손보',
-    #  'coNum': '',
-    #  'product_floatRate': '금리연동형(DB)',
-    #  'product_db': '롯데손보 이율보증형(DB)',
-    #  'product_dc': '롯데손보 이율보증형(DC)'
-    #  },
-    # {'companySet': '미래에셋생명',
-    #  'coNum': '',
-    #  'product_floatRate': '(무)미래에셋생명금리연동형(DB)',
-    #  'product_db': '미래에셋생명 이율보증형(DB)',
-    #  'product_dc': '미래에셋생명 이율보증형(DC)'
-    #  },
-    # {'companySet': '삼성생명',
-    #  'coNum': '',
-    #  'product_floatRate': '금리연동형(DB)',
-    #  'product_db': '삼성생명 이율보증형(DB)',
-    #  'product_dc': '삼성생명 이율보증형(DC)'
-    #  },
-    # {'companySet': '삼성화재',
-    #  'coNum': '',
-    #  'product_floatRate': '금리연동형(DB)',
-    #  'product_db': '삼성화재 이율보증형(DB)',
-    #  'product_dc': '삼성화재 이율보증형(DC)'
-    #  },
-    # {'companySet': '신한생명',
-    #  'coNum': '',
-    #  'product_floatRate': '금리연동형(DB)',
-    #  'product_db': '신한생명 이율보증형(DB)',
-    #  'product_dc': '신한생명 이율보증형(DC)'
-    #  },
-    # {'companySet': '신한은행',
-    #  'coNum': '',
-    #  'product_floatRate': '',
-    #  'product_db': 'Tops퇴직플랜정기예금(DB)',
-    #  'product_dc': 'Tops퇴직플랜정기예금(DC/IRP)'
-    #  },
-    # {'companySet': '우리은행',
-    #  'coNum': '',
-    #  'product_floatRate': '',
-    #  'product_db': '퇴직연금 전용 정기예금(DB)',
-    #  'product_dc': '퇴직연금 전용 정기예금(DC/IRP)'
-    #  },
-    # {'companySet': '전북은행',
-    #  'coNum': '',
-    #  'product_floatRate': '',
-    #  'product_db': '퇴직연금정기예금(DB)',
-    #  'product_dc': '퇴직연금정기예금(DC/IRP)'
-    #  },
-    # {'companySet': '제주은행',
-    #  'coNum': '',
-    #  'product_floatRate': '',
-    #  'product_db': '퇴직연금정기예금(DB)',
-    #  'product_dc': '퇴직연금정기예금(DC/IRP)'
-    #  },
-    # {'companySet': '하나생명',
-    #  'coNum': '',
-    #  'product_floatRate': '금리연동형(DB)',
-    #  'product_db': '이율보증형(DB)',
-    #  'product_dc': '이율보증형(DC)'
-    #  },
-    # {'companySet': '한화생명',
-    #  'coNum': '',
-    #  'product_floatRate': '금리연동형(DB)',
-    #  'product_db': '한화생명 이율보증형(DB)',
-    #  'product_dc': '한화생명 이율보증형(DC)'
-    #  },
-    # {'companySet': '한화손보',
-    #  'coNum': '',
-    #  'product_floatRate': '금리연동형(DB)',
-    #  'product_db': '한화손보 이율보증형(DB)',
-    #  'product_dc': '한화손보 이율보증형(DC)'
-    #  },
-    # {'companySet': '현대라이프',
-    #  'coNum': '',
-    #  'product_floatRate': '금리연동형(DB)',
-    #  'product_db': '현대라이프 이율보증형(DB)',
-    #  'product_dc': '현대라이프 이율보증형(DC)'
-    #  },
-    # {'companySet': '현대해상',
-    #  'coNum': '',
-    #  'product_floatRate': '금리연동형(DB)',
-    #  'product_db': '현대해상 이율보증형(DB)',
-    #  'product_dc': '현대해상 이율보증형(DC)'
-    #  },
-    # {'companySet': '흥국생명',
-    #  'coNum': '',
-    #  'product_floatRate': '금리연동형(DB)',
-    #  'product_db': '흥국생명 이율보증형(DB)',
-    #  'product_dc': '흥국생명 이율보증형(DC)'
-    #  }
+    {'companySet': 'DB생명',
+     'coNum': '',
+     'product_floatRate': '무배당 동부 자산관리 퇴직연금보험 금리연동형(DB)',
+     'product_db': '무배당 동부 자산관리 퇴직연금보험 이율보증형(DB)',
+     'product_dc': '무배당 동부 자산관리 퇴직연금보험 이율보증형(DC)'
+     },
+    {'companySet': 'DB손보',
+     'coNum': '',
+     'product_floatRate': '프로미 금리연동형보험(DB)',
+     'product_db': '프로미 원리금보장형보험(DB)',
+     'product_dc': '프로미 원리금보장형보험(DC)'
+     },
+    {'companySet': 'IBK기업은행',
+     'coNum': '',
+     'product_floatRate': '',
+     'product_db': 'IBK퇴직연금 정기예금(DB)',
+     'product_dc': 'IBK퇴직연금정기예금(DC/IRP)'
+     },
+    {'companySet': 'IBK연금보험',
+     'coNum': '',
+     'product_floatRate': '',
+     'product_db': 'IBK연금보험 이율보증형(DB)',
+     'product_dc': 'IBK연금보험 이율보증형(DC)'
+     },
+    {'companySet': 'KB국민은행',
+     'coNum': '',
+     'product_floatRate': '',
+     'product_db': 'KB퇴직연금정기예금(DB)',
+     'product_dc': 'KB퇴직연금정기예금(DC/IRP)'
+     },
+    {'companySet': 'KB손보',
+     'coNum': '',
+     'product_floatRate': '금리연동형(DB)',
+     'product_db': 'KB손보 이율보증형(DB)',
+     'product_dc': 'KB손보 이율보증형(DC)'
+     },
+    {'companySet': 'KDB산업은행',
+     'coNum': '',
+     'product_floatRate': '',
+     'product_db': 'KDBpension정기예금(DB)',
+     'product_dc': 'KDBpension정기예금(DC/IRP)'
+     },
+    {'companySet': 'KDB생명',
+     'coNum': '',
+     'product_floatRate': '금리연동형(DB)',
+     'product_db': 'KDB생명 이율보증형(DB)',
+     'product_dc': '금리연동형(DB)'
+     },
+    {'companySet': 'KEB하나은행',
+     'coNum': '',
+     'product_floatRate': '',
+     'product_db': '퇴직연금용 정기예금(DB)',
+     'product_dc': '퇴직연금용 정기예금(DC/IRP)'
+     },
+    {'companySet': 'NH농협은행',
+     'coNum': '',
+     'product_floatRate': '',
+     'product_db': '퇴직연금정기예금(DB)',
+     'product_dc': '퇴직연금정기예금(DC/IRP)'
+     },
+    {'companySet': '광주은행',
+     'coNum': '',
+     'product_floatRate': '',
+     'product_db': '퇴직연금전용정기예금(DB)',
+     'product_dc': '퇴직연금전용정기예금(DC/IRP)'
+     },
+    {'companySet': '교보생명',
+     'coNum': '',
+     'product_floatRate': '(무)교보 금리연동형(DB)',
+     'product_db': '교보생명 이율보증형보험(DB)',
+     'product_dc': '교보생명 이율보증형보험(DC)'
+     },
+    {'companySet': '동양생명',
+     'coNum': '',
+     'product_floatRate': '동양생명 금리연동형(DB)',
+     'product_db': '동양생명 이율보증형(DB)',
+     'product_dc': '동양생명 이율보증형(DC)'
+     },
+    {'companySet': '롯데손보',
+     'coNum': '',
+     'product_floatRate': '금리연동형(DB)',
+     'product_db': '롯데손보 이율보증형(DB)',
+     'product_dc': '롯데손보 이율보증형(DC)'
+     },
+    {'companySet': '미래에셋생명',
+     'coNum': '',
+     'product_floatRate': '(무)미래에셋생명금리연동형(DB)',
+     'product_db': '미래에셋생명 이율보증형(DB)',
+     'product_dc': '미래에셋생명 이율보증형(DC)'
+     },
+    {'companySet': '삼성생명',
+     'coNum': '',
+     'product_floatRate': '금리연동형(DB)',
+     'product_db': '삼성생명 이율보증형(DB)',
+     'product_dc': '삼성생명 이율보증형(DC)'
+     },
+    {'companySet': '삼성화재',
+     'coNum': '',
+     'product_floatRate': '금리연동형(DB)',
+     'product_db': '삼성화재 이율보증형(DB)',
+     'product_dc': '삼성화재 이율보증형(DC)'
+     },
+    {'companySet': '신한생명',
+     'coNum': '',
+     'product_floatRate': '금리연동형(DB)',
+     'product_db': '신한생명 이율보증형(DB)',
+     'product_dc': '신한생명 이율보증형(DC)'
+     },
+    {'companySet': '신한은행',
+     'coNum': '',
+     'product_floatRate': '',
+     'product_db': 'Tops퇴직플랜정기예금(DB)',
+     'product_dc': 'Tops퇴직플랜정기예금(DC/IRP)'
+     },
+    {'companySet': '우리은행',
+     'coNum': '',
+     'product_floatRate': '',
+     'product_db': '퇴직연금 전용 정기예금(DB)',
+     'product_dc': '퇴직연금 전용 정기예금(DC/IRP)'
+     },
+    {'companySet': '전북은행',
+     'coNum': '',
+     'product_floatRate': '',
+     'product_db': '퇴직연금정기예금(DB)',
+     'product_dc': '퇴직연금정기예금(DC/IRP)'
+     },
+    {'companySet': '제주은행',
+     'coNum': '',
+     'product_floatRate': '',
+     'product_db': '퇴직연금정기예금(DB)',
+     'product_dc': '퇴직연금정기예금(DC/IRP)'
+     },
+    {'companySet': '하나생명',
+     'coNum': '',
+     'product_floatRate': '금리연동형(DB)',
+     'product_db': '이율보증형(DB)',
+     'product_dc': '이율보증형(DC)'
+     },
+    {'companySet': '한화생명',
+     'coNum': '',
+     'product_floatRate': '금리연동형(DB)',
+     'product_db': '한화생명 이율보증형(DB)',
+     'product_dc': '한화생명 이율보증형(DC)'
+     },
+    {'companySet': '한화손보',
+     'coNum': '',
+     'product_floatRate': '금리연동형(DB)',
+     'product_db': '한화손보 이율보증형(DB)',
+     'product_dc': '한화손보 이율보증형(DC)'
+     },
+    {'companySet': '현대라이프',
+     'coNum': '',
+     'product_floatRate': '금리연동형(DB)',
+     'product_db': '현대라이프 이율보증형(DB)',
+     'product_dc': '현대라이프 이율보증형(DC)'
+     },
+    {'companySet': '현대해상',
+     'coNum': '',
+     'product_floatRate': '금리연동형(DB)',
+     'product_db': '현대해상 이율보증형(DB)',
+     'product_dc': '현대해상 이율보증형(DC)'
+     },
+    {'companySet': '흥국생명',
+     'coNum': '',
+     'product_floatRate': '금리연동형(DB)',
+     'product_db': '흥국생명 이율보증형(DB)',
+     'product_dc': '흥국생명 이율보증형(DC)'
+     }
 ]
 
 
@@ -288,6 +288,15 @@ listSet = [
 # - DB : db.sparta.penrate
 # - doc 에 저장해야 하는딩 ... print 한방에 하는 것처럼 ...
 
+def to_float(rawRate):
+    try:
+        return float(rawRate)
+    except ValueError:
+        return 0
+
+# print(to_float('1.1'))
+# print(to_float(''))
+
 def insert_rate():
     for i in range(0, len(listSet)):
         for d in data:
@@ -296,26 +305,22 @@ def insert_rate():
                     if d['product'] == listSet[i]['product_floatRate']:
                         floatRate = float(d['rate'])
                 else:
-                    floatRate = ""
+                    floatRate = 0
                 if d['product'] == listSet[i]['product_db']:
-                    # try:
-                    #     db1y = float(d['val12'])
-                    # except ValueError:
-                    #     db1y = ""
-                    db1y = float(d['val12'])
-                    db2y = d['val24']
-                    db3y = d['val36']
-                    db5y = d['val60']
+                    db1y = to_float(d['val12'])
+                    db2y = to_float(d['val24'])
+                    db3y = to_float(d['val36'])
+                    db5y = to_float(d['val60'])
 
-                    gubun = d['gubun']
-                    period = d['period']
-                    bank_check = d['bank_check']
+                    gubun = to_float(d['gubun'])
+                    period = to_float(d['period'])
+                    bank_check = to_float(d['bank_check'])
 
                 if d['product'] == listSet[i]['product_dc']:
-                    dc1y = d['val12']
-                    dc2y = d['val24']
-                    dc3y = d['val36']
-                    dc5y = d['val60']
+                    dc1y = to_float(d['val12'])
+                    dc2y = to_float(d['val24'])
+                    dc3y = to_float(d['val36'])
+                    dc5y = to_float(d['val60'])
         doc = {
             'coNum': listSet[i]['coNum'],
             'coName': listSet[i]['companySet'],
@@ -333,7 +338,7 @@ def insert_rate():
             'bank_check': bank_check
         }
         # db.penrate.insert_one(doc)
-        # print(doc)
+        print(doc)
 
 # 숫자로 만드는 게 또 관건이네 ...
 

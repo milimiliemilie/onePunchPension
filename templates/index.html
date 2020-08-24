@@ -11,12 +11,58 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-          integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-          crossorigin="anonymous"></script>
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-          crossorigin="anonymous"></script>
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <script>
+
+        $(document).ready(function () {
+            $("#tbodyRates").html("");
+            showRates();
+        });
+
+        function showRates() {
+            $.ajax({
+                type: "GET",
+                url: "/rates",
+                data: {},
+                success: function (response) {
+                    if (response["result"] == "success") {
+                        var rates = response['rates']
+                        for (let i = 0; i < rates.length; i++) {
+                            var rate = rates[i];
+
+                            var coName = rate['coName'];
+
+                            var tempHtml = `
+    <tr>
+        <th class="text-nowrap" scope="row">1</th>
+        <th class="text-nowrap" scope="row">손보</th>
+        <th class="text-nowrap" scope="row">${coName}</th>
+        <td class="">1.25<br><small>+3</small></td>
+        <td class="">1.25<br><small>+3</small></td>
+        <td class="">1.25<br><small>+3</small></td>
+        <td class="">1.25<br><small>+3</small></td>
+        <td class="">1.25<br><small>+3</small></td>
+        <td class="">1.25<br><small>+3</small></td>
+        <td class="">1.25<br><small>+3</small></td>
+        <td class="">1.25<br><small>+3</small></td>
+        <td class="">1.25<br><small>+3</small></td>
+        <td class=""><small>2020.08.01<br>~ 2020.08.31</small></td>
+        <td class=""><small>2020.07.28</small></td>
+    </tr>
+                            `
+                            $('#tbodyRates').append(tempHtml);
+                        }
+                    }
+                }
+            })
+        }
+    </script>
 
     <!-- Google Fonts -->
 
@@ -25,8 +71,8 @@
 
     <title>원펀치퇴직연금</title>
 
-<!--    <script data-ad-client="ca-pub-4295741603974812" async-->
-<!--            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
+    <!--    <script data-ad-client="ca-pub-4295741603974812" async-->
+    <!--            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
 
     <!-- Style -->
 
@@ -131,7 +177,7 @@
         <th class=""><small>5년</small></th>
 
         <th class=""><small>적용기간</small></th>
-        <th class=""><small>공시시각</small</th>
+        <th class=""><small>공시시각</small></th>
     </tr>
     </thead>
     <tbody>
@@ -175,7 +221,9 @@
     <br>
     <h9>Report issues: nomorenogada@gmail.com</h9>
     <br>
-    <h9>Powered by: <text class="songmyung_text">노가다해방전선</text></h9>
+    <h9>Powered by:
+        <text class="songmyung_text">노가다해방전선</text>
+    </h9>
 </div>
 <br>
 </body>
