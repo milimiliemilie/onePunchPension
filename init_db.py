@@ -312,9 +312,9 @@ def insert_rate():
                     db3y = to_float(d['val36'])
                     db5y = to_float(d['val60'])
 
-                    gubun = to_float(d['gubun'])
-                    period = to_float(d['period'])
-                    bank_check = to_float(d['bank_check'])
+                    gubun = d['gubun']
+                    period = d['period']
+                    bank_check = d['bank_check']
 
                 if d['product'] == listSet[i]['product_dc']:
                     dc1y = to_float(d['val12'])
