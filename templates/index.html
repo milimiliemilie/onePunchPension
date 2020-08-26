@@ -79,12 +79,13 @@
 
         function filterRates() {
 
-            var product_give
-            product_give = $('#inputGroupSelectProduct option:selected').val()
+            var field_name = $('#inputGroupSelectProduct option:selected').val()
 
             $.ajax({
                 type: "GET",
-                url: "/rates/filtered", // 여기에 ?product_give=~~~.val() 이라고 쓰고싶다...
+                url: `/rates/filtered?product_give=${field_name}`,
+                // 여기에 ?product_give=~~~.val() 이라고 쓰고싶다...
+                // 그런데 그걸 어떻게 app.py 에서 써먹는담?
                 data: {},
                 success: function (response) {
                     if (response["result"] == "success") {
