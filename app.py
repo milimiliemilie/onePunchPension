@@ -16,7 +16,6 @@ def home():
     return render_template('index.html')
 
 
-
 @app.route('/rates', methods=['GET'])
 def show_rates():
     # 1. mongoDB에서 _id 값을 제외한 모든 데이터 조회해오기(Read)
@@ -31,28 +30,31 @@ def show_rates():
     }
     return jsonify(result)
 
+
 @app.route('/rates/filtered', methods=['GET'])
 def show_rates_filtered():
-
     product_receive = request.args['product_give']
     print(product_receive)
 
     gubun_receive = request.args['gubun_give']
     print(gubun_receive)
 
-    rates = list(db.penrate.find({}, {'_id': 0}).sort(product_receive, pymongo.DESCENDING))
+    # "gubun = 손보이거나 생보" 인 애들을 찾아와서 descending 하고 싶은데, 그게 잘 안돼~
+    rates_life = list(db.penrate.find({'gubun': '생보'}, {'_id': 0}).sort(product_receive, pymongo.DESCENDING))
+    rates_fire = list(db.penrate.find({'gubun': '손보'}, {'_id': 0}).sort(product_receive, pymongo.DESCENDING))
+    rates_ins = sorted((rates_life + rates_fire), key=product_receive, reverse=True)
+    rates = rates_ins
+
+    # rates = rates_ins + rates_bank
 
     result = {
         'result': 'success',
         'rates': rates,
     }
-    # pprint.pprint(result)
+    pprint.pprint(result)
 
     return jsonify(result)
-
-
 
 # 이 아래는 제일 밑으로.
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)
-
