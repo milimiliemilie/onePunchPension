@@ -33,35 +33,24 @@ def show_rates():
 
 @app.route('/rates/filtered', methods=['GET'])
 def show_rates_filtered():
-    # 아래대로 하면 ...
-    # URL : localhost:5000/query?product_receive=floatRate ... 라고 직접 입력했을 때
-    # floatRate 순서대로 내려가게 될 것인디...
-    # request.args['product']에 들어갈게 floatRate이라고 끌어올 방법이 없을까?
-    # (URL에 직접 치지 말고, 드롭다운에서 선택해서)
 
-    field = request.args['product_give']
-    print(field)
-    # condition 하나 만들어 보고...
-    # 잘 되면, condition에 pair를 하나 더 추가해야겠다.
-    # condition = {
-    #     'year': year_receive,
-    #     'month': month_receive,
-        # 'gubun': gubun_receive,
-        # 'product': product_receive
-    # }
+    product_receive = request.args['product_give']
+    print(product_receive)
 
-    # '머 = 머' 인 값을 찾아오라, 이게 아니라
-    # '머' 를 기준으로 소팅해라, 이건뎅...
-    rates = list(db.penrate.find({}, {'_id': 0}).sort(field, pymongo.DESCENDING))
+    gubun_receive = request.args['gubun_give']
+    print(gubun_receive)
 
-    # 2. articles라는 키 값으로 articles 정보 보내주기
+    rates = list(db.penrate.find({}, {'_id': 0}).sort(product_receive, pymongo.DESCENDING))
+
     result = {
         'result': 'success',
         'rates': rates,
     }
-    pprint.pprint(result)
+    # pprint.pprint(result)
 
     return jsonify(result)
+
+
 
 # 이 아래는 제일 밑으로.
 if __name__ == '__main__':

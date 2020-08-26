@@ -79,13 +79,12 @@
 
         function filterRates() {
 
-            var field_name = $('#inputGroupSelectProduct option:selected').val()
+            var product_field = $('#inputGroupSelectProduct option:selected').val()
+            var gubun_field = $('#inputGroupSelectGubun option:selected').val()
 
             $.ajax({
                 type: "GET",
-                url: `/rates/filtered?product_give=${field_name}`,
-                // 여기에 ?product_give=~~~.val() 이라고 쓰고싶다...
-                // 그런데 그걸 어떻게 app.py 에서 써먹는담?
+                url: `/rates/filtered?product_give=${product_field}&gubun_give=${gubun_field}`,
                 data: {},
                 success: function (response) {
                     if (response["result"] == "success") {
@@ -134,6 +133,7 @@
                 }
             })
         }
+
 
     </script>
 
@@ -214,8 +214,7 @@
         </div>
         <select class="custom-select" id="inputGroupSelectGubun">
             <option value="gubun_all">전체 업권으로 비교하기</option>
-            <option selected value="gubun_insAll">업권별로 묶기 (손/생보 통합)</option>
-            <option value="gubun_insDiff">업권별로 묶기 (손/생보 별도)</option>
+            <option selected value="gubun_ins">업권별로 묶기 (손/생보 통합)</option>
         </select>
     </div>
     <div class="input-group mb-3">
