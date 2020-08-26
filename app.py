@@ -38,8 +38,17 @@ def show_rates_filtered():
     # floatRate 순서대로 내려가게 될 것인디...
     # request.args['product']에 들어갈게 floatRate이라고 끌어올 방법이 없을까?
     # (URL에 직접 치지 말고, 드롭다운에서 선택해서)
+
     product_receive = request.args['product']
-    rates = list(db.penrate.find({}, {'_id': 0}).sort(product_receive, pymongo.DESCENDING))
+    # condition 하나 만들어 보고...
+    # 잘 되면, condition에 pair를 하나 더 추가해야겠다.
+    condition = {
+        'product': product_receive
+    }
+
+    # '머 = 머' 인 값을 찾아오라, 이게 아니라
+    # '머' 를 기준으로 소팅해라, 이건뎅...
+    rates = list(db.penrate.find({}, {'_id': 0}).sort(condition, pymongo.DESCENDING))
 
     # 2. articles라는 키 값으로 articles 정보 보내주기
     result = {
