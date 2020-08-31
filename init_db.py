@@ -4,34 +4,6 @@ import re, demjson
 from pymongo import MongoClient
 import pprint
 
-url = "https://www.moel.go.kr/pension/finance/rate2.do"
-
-years = list(range(2017, 2020))  # 2017 ~ 2019
-months = list(range(1, 13))  # 1 ~ 12
-
-# 2016. 2 ~ 12 월 : 별도 수행
-# 2020. 1 ~ 8 월 : 별도 수행
-
-for srchYear in years:
-    for srchMonth in months:
-        payload = 'srchMonth=' + str(srchMonth) + '&srchWord=&srchYear=' + str(srchYear) + '&url=on'
-
-        headers = {
-            'Upgrade-Insecure-Requests': '1',
-            'Origin': 'https://www.moel.go.kr',
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36',
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
-        }
-        response = requests.request("POST", url, headers=headers, data=payload)
-        soup = BeautifulSoup(response.text, 'html.parser')
-        p = re.compile(r'var mydata = (.*?);', re.DOTALL)
-        script = soup.select_one('script[type="text/javascript"]:last-child')
-        m = p.findall(response.text)
-
-        data = demjson.decode(m[0])
-        pprint.pprint(data)
-
 client = MongoClient('localhost', 27017)
 db = client.dbsparta
 
@@ -308,10 +280,11 @@ def to_float(rawRate):
     except ValueError:
         return 0
 
+
 # print(to_float('1.1'))
 # print(to_float(''))
 
-def insert_rate():
+def insert_rate(data):
     for i in range(0, len(listSet)):
         for d in data:
             if d['company'] == listSet[i]['companySet']:
@@ -362,6 +335,45 @@ def insert_rate():
         db.penrate.insert_one(doc)
         # print(doc)
 
+# 이 아래로 크롤링
+
+url = "https://www.moel.go.kr/pension/finance/rate2.do"
+
+years = list(range(2017, 2020))  # 2017 ~ 2019
+months = list(range(1, 13))  # 1 ~ 12
+
+# for srchYear in years:
+#     for srchMonth in months:
+#         print(srchYear, srchMonth)
+
+
+# 2016. 2 ~ 12 월 : 별도 수행
+# 2020. 1 ~ 8 월 : 별도 수행
+
+for srchYear in years:
+    for srchMonth in months:
+        payload = 'srchMonth=' + str(srchMonth) + '&srchWord=&srchYear=' + str(srchYear) + '&url=on'
+
+        headers = {
+            'Upgrade-Insecure-Requests': '1',
+            'Origin': 'https://www.moel.go.kr',
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+        }
+        response = requests.request("POST", url, headers=headers, data=payload)
+        soup = BeautifulSoup(response.text, 'html.parser')
+        p = re.compile(r'var mydata = (.*?);', re.DOTALL)
+        script = soup.select_one('script[type="text/javascript"]:last-child')
+        m = p.findall(response.text)
+
+        data = demjson.decode(m[0])
+
+        insert_rate(data)
+
+        print(str(srchYear) + '.' + str(srchMonth) + '. 완료')
+
+
+
 # 숫자로 만드는 게 또 관건이네 ...
 
-insert_rate()
