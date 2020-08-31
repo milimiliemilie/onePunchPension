@@ -33,6 +33,11 @@ def show_rates():
 
 @app.route('/filtered', methods=['GET'])
 def show_rates_filtered():
+
+    srchYear_receive = request.args['srchYear_give']
+    srchMonth_receive = request.args['srchMonth_give']
+    print(srchYear_receive, srchMonth_receive)
+
     product_receive = request.args['product_give']
     print(product_receive)
 
@@ -42,7 +47,7 @@ def show_rates_filtered():
 
     if gubun_receive == 'gubun_all':
         rates = list(
-            db.penrate.find({}, {'_id': 0}).sort(product_receive, pymongo.DESCENDING))
+            db.penrate.find({'srchYear': srchYear_receive}, {'_id': 0}).sort(product_receive, pymongo.DESCENDING))
 
         result = {
             'result': 'success',

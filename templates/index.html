@@ -80,6 +80,8 @@
 
         function filterRates() {
 
+            var srchYear_field = $('#inputGroupSelectYr option:selected').val()
+            var srchMonth_field = $('#inputGroupSelectMn option:selected').val()
             var product_field = $('#inputGroupSelectProduct option:selected').val()
             var gubun_field = $('#inputGroupSelectGubun option:selected').val()
 
@@ -88,7 +90,7 @@
 
                 $.ajax({
                     type: "GET",
-                    url: `/filtered?product_give=${product_field}&gubun_give=${gubun_field}`,
+                    url: `/filtered?srchYear_give=${srchYear_field}&srchMonth_give=${srchMonth_field}&product_give=${product_field}&gubun_give=${gubun_field}`,
                     data: {},
                     success: function (response) {
                         if (response["result"] == "success") {
@@ -142,7 +144,7 @@
 
                 $.ajax({
                     type: "GET",
-                    url: `/filtered?product_give=${product_field}&gubun_give=${gubun_field}`,
+                    url: `/filtered?srchYear_give=${srchYear_field}&srchMonth_give=${srchMonth_field}&product_give=${product_field}&gubun_give=${gubun_field}`,
                     data: {},
                     success: function (response) {
                         if (response["result"] == "success") {
@@ -309,16 +311,16 @@
     </div>
     <div class="input-group mb-3">
         <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelectGubun">비교묶음</label>
+            <label class="input-group-text" for="inputGroupSelectGubun">랭킹기준</label>
         </div>
         <select class="custom-select" id="inputGroupSelectGubun">
-            <option value="gubun_all">전체 업권으로 비교하기</option>
-            <option selected value="gubun_ins">업권별로 묶기 (손/생보 통합)</option>
+            <option selected value="gubun_all">전체 업권으로 비교하기</option>
+            <option value="gubun_ins">업권별로 묶기 (손/생보 통합)</option>
         </select>
     </div>
     <div class="input-group mb-3">
         <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelectProduct">순위기준</label>
+            <label class="input-group-text" for="inputGroupSelectProduct">내림차순</label>
         </div>
         <select class="custom-select" id="inputGroupSelectProduct">
             <option value="floatRate">금리연동(RP)</option>

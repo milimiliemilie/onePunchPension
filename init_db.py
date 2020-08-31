@@ -316,6 +316,12 @@ def insert_rate():
                     period = d['period']
                     bank_check = d['bank_check']
 
+                    # period 예시: 20.08.01~20.08.31
+                    # srchYear: to_float('20' + period의 앞 두글자)
+                    srchYear = int('20' + d['period'][:2])
+                    # srchMonth: to_float(period의 중간 두글자 (네번째부터 두 개))
+                    srchMonth = int(d['period'][3:5])
+
                 if d['product'] == listSet[i]['product_dc']:
                     dc1y = to_float(d['val12'])
                     dc2y = to_float(d['val24'])
@@ -335,10 +341,12 @@ def insert_rate():
             'dc5y': dc5y,
             'gubun': gubun,
             'period': period,
-            'bank_check': bank_check
+            'bank_check': bank_check,
+            'srchYear': srchYear,
+            'srchMonth': srchMonth
         }
-        # db.penrate.insert_one(doc)
-        print(doc)
+        db.penrate.insert_one(doc)
+        # print(doc)
 
 # 숫자로 만드는 게 또 관건이네 ...
 
