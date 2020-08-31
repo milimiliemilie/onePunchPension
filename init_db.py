@@ -2,21 +2,35 @@ import requests
 from bs4 import BeautifulSoup
 import re, demjson
 from pymongo import MongoClient
-
-headers = {
-    'Accept': 'application/json, text/javascript, */*; q=0.01',
-    'X-Requested-With': 'XMLHttpRequest',
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36',
-    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-    'Cookie': 'WMONID=sitKQOWTfNO; JSESSIONID=2DirULBpnQ3mq0EzrZvrtvDxupkca50WF3Jt50H6gsJH5QPyVCaVgojVs2avyMwK.amV1c19kb21haW4vbXM0'
-}
-response = requests.request("GET", 'https://www.moel.go.kr/pension/finance/table-popup-2.do', headers=headers)
-soup = BeautifulSoup(response.text, 'html.parser')
-p = re.compile(r'var mydata = (.*?);', re.DOTALL)
-script = soup.select_one('script[type="text/javascript"]:last-child')
-m = p.findall(str(script))
-data = demjson.decode(m[0])  # data에 금리정보 있음
 import pprint
+
+url = "https://www.moel.go.kr/pension/finance/rate2.do"
+
+years = list(range(2017, 2020))  # 2017 ~ 2019
+months = list(range(1, 13))  # 1 ~ 12
+
+# 2016. 2 ~ 12 월 : 별도 수행
+# 2020. 1 ~ 8 월 : 별도 수행
+
+for srchYear in years:
+    for srchMonth in months:
+        payload = 'srchMonth=' + str(srchMonth) + '&srchWord=&srchYear=' + str(srchYear) + '&url=on'
+
+        headers = {
+            'Upgrade-Insecure-Requests': '1',
+            'Origin': 'https://www.moel.go.kr',
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+        }
+        response = requests.request("POST", url, headers=headers, data=payload)
+        soup = BeautifulSoup(response.text, 'html.parser')
+        p = re.compile(r'var mydata = (.*?);', re.DOTALL)
+        script = soup.select_one('script[type="text/javascript"]:last-child')
+        m = p.findall(response.text)
+
+        data = demjson.decode(m[0])
+        pprint.pprint(data)
 
 client = MongoClient('localhost', 27017)
 db = client.dbsparta
