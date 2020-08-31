@@ -332,8 +332,8 @@ def insert_rate(data):
             'srchYear': srchYear,
             'srchMonth': srchMonth
         }
-        db.penrate.insert_one(doc)
-        # print(doc)
+        # db.penrate.insert_one(doc)
+        print(doc)
 
 # 이 아래로 크롤링
 
@@ -350,8 +350,8 @@ months = list(range(1, 13))  # 1 ~ 12
 # 2016. 2 ~ 12 월 : 별도 수행
 # 2020. 1 ~ 8 월 : 별도 수행
 
-for srchYear in years:
-    for srchMonth in months:
+for srchYear in [2020]:
+    for srchMonth in list(range(1, 9)):
         payload = 'srchMonth=' + str(srchMonth) + '&srchWord=&srchYear=' + str(srchYear) + '&url=on'
 
         headers = {

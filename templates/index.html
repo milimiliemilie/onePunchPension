@@ -26,9 +26,13 @@
         });
 
         function showRates() {
+
+            var srchYear_field = $('#inputGroupSelectYr option:selected').val()
+            var srchMonth_field = $('#inputGroupSelectMn option:selected').val()
+
             $.ajax({
                 type: "GET",
-                url: "/rates",
+                url: `/rates?srchYear_give=${srchYear_field}&srchMonth_give=${srchMonth_field}`,
                 data: {},
                 success: function (response) {
                     if (response["result"] == "success") {

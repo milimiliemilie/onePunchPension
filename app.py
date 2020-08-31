@@ -21,7 +21,10 @@ def show_rates():
     # 1. mongoDB에서 _id 값을 제외한 모든 데이터 조회해오기(Read)
     # 조건 없이 다 검색한다 ==> {}
     # _id 는 다 뺴고 가져와라 ==> {'_id': 0}
-    rates = list(db.penrate.find({}, {'_id': 0}).sort("db1y", pymongo.DESCENDING))
+    srchYear_receive = int(request.args['srchYear_give'])
+    srchMonth_receive = int(request.args['srchMonth_give'])
+
+    rates = list(db.penrate.find({'srchYear': srchYear_receive, 'srchMonth': srchMonth_receive}, {'_id': 0}).sort("db1y", pymongo.DESCENDING))
 
     # 2. articles라는 키 값으로 articles 정보 보내주기
     result = {
@@ -61,8 +64,8 @@ def show_rates_filtered():
         return jsonify(result)
 
     elif gubun_receive == 'gubun_ins':
-        rates_ins = list(db.penrate.find({'gubun': {'$in': ['생보', '손보']}}, {'_id': 0}).sort(product_receive, pymongo.DESCENDING))
-        rates_bank = list(db.penrate.find({'gubun': '은행'}, {'_id': 0}).sort(product_receive, pymongo.DESCENDING))
+        rates_ins = list(db.penrate.find({'srchYear': srchYear_receive, 'srchMonth': srchMonth_receive, 'gubun': {'$in': ['생보', '손보']}}, {'_id': 0}).sort(product_receive, pymongo.DESCENDING))
+        rates_bank = list(db.penrate.find({'srchYear': srchYear_receive, 'srchMonth': srchMonth_receive, 'gubun': '은행'}, {'_id': 0}).sort(product_receive, pymongo.DESCENDING))
 
         result = {
             'result': 'success',
