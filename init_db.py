@@ -450,33 +450,48 @@ cs = list(range(0, 29))
 for c in cs:
     tempCoName = listSet[c]['companySet']
     coNames.append(tempCoName)
-# 결과 : coNames = ['BNK경남은행', 'DB생명', 'DB손보', ... ]
-print(coNames)
 
-pprint.pprint(list(db.penrate.find({'srchMonth': 2, 'srchYear': 2016})))
+
+# 결과 : coNames = ['BNK경남은행', 'DB생명', 'DB손보', ... ]
+
+# pprint.pprint(coNames)
+# pprint.pprint(list(db.penrate.find({'srchMonth': 2, 'srchYear': 2016}, {'_id': 0, 'coName': 1})))
 
 def add_rate_change():
-
     products = ['floatRate', 'db1y', 'db2y', 'db3y', 'db5y', 'dc1y', 'dc2y', 'dc3y', 'dc5y']
 
     # find: 각 상품별로 가져온다. 지금꺼랑, 전월꺼를.
     # update: (지금꺼 - 전월꺼) value 를 집어넣는다.
 
-    for srchYear in [2016]:
-        for srchMonth in [4, 13]:
+    for srchYear in [2016, 2017, 2018, 2019, 2020]:
+        for srchMonth in list(range(1, 13)):
             for coName in coNames:
                 for product in products:
+                    try:
+                        lastRate = float(
+                            db.penrate.find_one({'coName': coName, 'srchMonth': srchMonth - 1, 'srchYear': srchYear})[
+                                product])
+                        nowRate = float(
+                            db.penrate.find_one({'coName': coName, 'srchMonth': srchMonth, 'srchYear': srchYear})[
+                                product])
 
-                    lastRate = float(db.penrate.find_one({'coName': coName, 'srchMonth': srchMonth-1, 'srchYear': srchYear})[product])
-                    nowRate = float(db.penrate.find_one({'coName': coName, 'srchMonth': srchMonth, 'srchYear': srchYear})[product])
+                        rateChange = nowRate - lastRate
+                        if rateChange < 0:
+                            changeSign = ""
+                        else:
+                            changeSign = "+"
 
-                    rateChange = nowRate - lastRate
-                    if rateChange < 0:
-                        changeSign = ""
-                    else:
-                        changeSign = "+"
+                        signedChange = (changeSign + str(round(rateChange * 100)) + 'bp')
 
-                    print(changeSign + str(round(rateChange * 100)) + 'bp')
+                        db.penrate.update({'coName': coName, 'srchMonth': srchMonth, 'srchYear': srchYear},
+                                              {'$set': {str(product + 'change'): signedChange}})
+
+                    except TypeError:
+                        db.penrate.update({'coName': coName, 'srchMonth': srchMonth, 'srchYear': srchYear},
+                                          {'$set': {str(product + 'change'): 'N/A'}})
+
+            print(str(srchYear) + '.' + str(srchMonth) + ' 완료')
+
 
 
 # def add_rate_chage():
@@ -496,4 +511,4 @@ def add_rate_change():
 # create_document()
 # test_change()
 # get_html()
-# add_rate_change()
+add_rate_change()
