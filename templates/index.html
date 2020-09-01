@@ -56,21 +56,31 @@
                             var period = rate['period'];
                             var bank_check = rate['bank_check'];
 
+                            var floatRatechange = rate['floatRatechange'];
+                            var db1ychange = rate['db1ychange'];
+                            var db2ychange = rate['db2ychange'];
+                            var db3ychange = rate['db3ychange'];
+                            var db5ychange = rate['db5ychange'];
+                            var dc1ychange = rate['dc1ychange'];
+                            var dc2ychange = rate['dc2ychange'];
+                            var dc3ychange = rate['dc3ychange'];
+                            var dc5ychange = rate['dc5ychange'];
+
 
                             var tempHtml = `
     <tr>
         <th class="text-nowrap" scope="row">${rank}</th>
         <th class="text-nowrap" scope="row">${gubun}</th>
         <th class="text-nowrap" scope="row">${coName}</th>
-        <td class="">${floatRate}<br><small>+3</small></td>
-        <td class="">${db1y}<br><small>+3</small></td>
-        <td class="">${db2y}<br><small>+3</small></td>
-        <td class="">${db3y}<br><small>+3</small></td>
-        <td class="">${db5y}<br><small>+3</small></td>
-        <td class="">${dc1y}<br><small>+3</small></td>
-        <td class="">${dc2y}<br><small>+3</small></td>
-        <td class="">${dc3y}<br><small>+3</small></td>
-        <td class="">${dc5y}<br><small>+3</small></td>
+        <td class="">${floatRate}<br><small>${floatRatechange}</small></td>
+        <td class="">${db1y}<br><small>${db1ychange}</small></td>
+        <td class="">${db2y}<br><small>${db2ychange}</small></td>
+        <td class="">${db3y}<br><small>${db3ychange}</small></td>
+        <td class="">${db5y}<br><small>${db5ychange}</small></td>
+        <td class="">${dc1y}<br><small>${dc1ychange}</small></td>
+        <td class="">${dc2y}<br><small>${dc2ychange}</small></td>
+        <td class="">${dc3y}<br><small>${dc3ychange}</small></td>
+        <td class="">${dc5y}<br><small>${dc5ychange}</small></td>
         <td class=""><small>${period}</small></td>
         <td class=""><small>${bank_check}</small></td>
     </tr>
@@ -119,20 +129,30 @@
                                 var period = rate['period'];
                                 var bank_check = rate['bank_check'];
 
+                                var floatRatechange = rate['floatRatechange'];
+                                var db1ychange = rate['db1ychange'];
+                                var db2ychange = rate['db2ychange'];
+                                var db3ychange = rate['db3ychange'];
+                                var db5ychange = rate['db5ychange'];
+                                var dc1ychange = rate['dc1ychange'];
+                                var dc2ychange = rate['dc2ychange'];
+                                var dc3ychange = rate['dc3ychange'];
+                                var dc5ychange = rate['dc5ychange'];
+
                                 var tempHtml = `
     <tr>
         <th class="text-nowrap" scope="row">${rank}</th>
         <th class="text-nowrap" scope="row">${gubun}</th>
         <th class="text-nowrap" scope="row">${coName}</th>
-        <td class="">${floatRate}<br><small>+3</small></td>
-        <td class="">${db1y}<br><small>+3</small></td>
-        <td class="">${db2y}<br><small>+3</small></td>
-        <td class="">${db3y}<br><small>+3</small></td>
-        <td class="">${db5y}<br><small>+3</small></td>
-        <td class="">${dc1y}<br><small>+3</small></td>
-        <td class="">${dc2y}<br><small>+3</small></td>
-        <td class="">${dc3y}<br><small>+3</small></td>
-        <td class="">${dc5y}<br><small>+3</small></td>
+        <td class="">${floatRate}<br><small>${floatRatechange}</small></td>
+        <td class="">${db1y}<br><small>${db1ychange}</small></td>
+        <td class="">${db2y}<br><small>${db2ychange}</small></td>
+        <td class="">${db3y}<br><small>${db3ychange}</small></td>
+        <td class="">${db5y}<br><small>${db5ychange}</small></td>
+        <td class="">${dc1y}<br><small>${dc1ychange}</small></td>
+        <td class="">${dc2y}<br><small>${dc2ychange}</small></td>
+        <td class="">${dc3y}<br><small>${dc3ychange}</small></td>
+        <td class="">${dc5y}<br><small>${dc5ychange}</small></td>
         <td class=""><small>${period}</small></td>
         <td class=""><small>${bank_check}</small></td>
     </tr>
