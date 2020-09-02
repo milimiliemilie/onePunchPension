@@ -39,6 +39,16 @@
         function colorZero(r) {
             if (r == "0.00") {
                 return "isZero"
+            } else {
+                return "isInt"
+            }
+        }
+
+        function fontBold(x, y) {
+            if (x == y) {
+                return isBold;
+            } else {
+                return isNormal;
             }
         }
 
@@ -47,6 +57,7 @@
 
             var srchYear_field = $('#inputGroupSelectYr option:selected').val()
             var srchMonth_field = $('#inputGroupSelectMn option:selected').val()
+            var product_field = $('#inputGroupSelectProduct option:selected').val()
 
             $.ajax({
                 type: "GET",
@@ -89,15 +100,15 @@
         <th class="text-nowrap" scope="row">${rank}</th>
         <th class="text-nowrap" scope="row">${gubun}</th>
         <th class="text-nowrap" scope="row">${coName}</th>
-        <td class="">${floatRate}<br><small class="${colorRates(floatRatechange)}">${floatRatechange}</small></td>
-        <td class="">${db1y}<br><small class="${colorRates(db1ychange)}">${db1ychange}</small></td>
-        <td class="">${db2y}<br><small class="${colorRates(db2ychange)}">${db2ychange}</small></td>
-        <td class="">${db3y}<br><small class="${colorRates(db3ychange)}">${db3ychange}</small></td>
-        <td class="">${db5y}<br><small class="${colorRates(db5ychange)}">${db5ychange}</small></td>
-        <td class="">${dc1y}<br><small class="${colorRates(dc1ychange)}">${dc1ychange}</small></td>
-        <td class="">${dc2y}<br><small class="${colorRates(dc2ychange)}">${dc2ychange}</small></td>
-        <td class="">${dc3y}<br><small class="${colorRates(dc3ychange)}">${dc3ychange}</small></td>
-        <td class="">${dc5y}<br><small class="${colorRates(dc5ychange)}">${dc5ychange}</small></td>
+        <td class="${colorZero(floatRate)}">${floatRate}<br><small class="${colorRates(floatRatechange)}">${floatRatechange}</small></td>
+        <td class="${colorZero(db1y)}">${db1y}<br><small class="${colorRates(db1ychange)}">${db1ychange}</small></td>
+        <td class="${colorZero(db2y)}">${db2y}<br><small class="${colorRates(db2ychange)}">${db2ychange}</small></td>
+        <td class="${colorZero(db3y)}">${db3y}<br><small class="${colorRates(db3ychange)}">${db3ychange}</small></td>
+        <td class="${colorZero(db5y)}">${db5y}<br><small class="${colorRates(db5ychange)}">${db5ychange}</small></td>
+        <td class="${colorZero(dc1y)}">${dc1y}<br><small class="${colorRates(dc1ychange)}">${dc1ychange}</small></td>
+        <td class="${colorZero(dc2y)}">${dc2y}<br><small class="${colorRates(dc2ychange)}">${dc2ychange}</small></td>
+        <td class="${colorZero(dc3y)}">${dc3y}<br><small class="${colorRates(dc3ychange)}">${dc3ychange}</small></td>
+        <td class="${colorZero(dc5y)}">${dc5y}<br><small class="${colorRates(dc5ychange)}">${dc5ychange}</small></td>
         <td class=""><small>${period}</small></td>
         <td class=""><small>${bank_check}</small></td>
     </tr>
@@ -161,15 +172,15 @@
         <th class="text-nowrap" scope="row">${rank}</th>
         <th class="text-nowrap" scope="row">${gubun}</th>
         <th class="text-nowrap" scope="row">${coName}</th>
-        <td class="">${floatRate}<br><small class="${colorRates(floatRatechange)}">${floatRatechange}</small></td>
-        <td class="">${db1y}<br><small class="${colorRates(db1ychange)}">${db1ychange}</small></td>
-        <td class="">${db2y}<br><small class="${colorRates(db2ychange)}">${db2ychange}</small></td>
-        <td class="">${db3y}<br><small class="${colorRates(db3ychange)}">${db3ychange}</small></td>
-        <td class="">${db5y}<br><small class="${colorRates(db5ychange)}">${db5ychange}</small></td>
-        <td class="">${dc1y}<br><small class="${colorRates(dc1ychange)}">${dc1ychange}</small></td>
-        <td class="">${dc2y}<br><small class="${colorRates(dc2ychange)}">${dc2ychange}</small></td>
-        <td class="">${dc3y}<br><small class="${colorRates(dc3ychange)}">${dc3ychange}</small></td>
-        <td class="">${dc5y}<br><small class="${colorRates(dc5ychange)}">${dc5ychange}</small></td>
+        <td class="${colorZero(floatRate)}">${floatRate}<br><small class="${colorRates(floatRatechange)}">${floatRatechange}</small></td>
+        <td class="${colorZero(db1y)}">${db1y}<br><small class="${colorRates(db1ychange)}">${db1ychange}</small></td>
+        <td class="${colorZero(db2y)}">${db2y}<br><small class="${colorRates(db2ychange)}">${db2ychange}</small></td>
+        <td class="${colorZero(db3y)}">${db3y}<br><small class="${colorRates(db3ychange)}">${db3ychange}</small></td>
+        <td class="${colorZero(db5y)}">${db5y}<br><small class="${colorRates(db5ychange)}">${db5ychange}</small></td>
+        <td class="${colorZero(dc1y)}">${dc1y}<br><small class="${colorRates(dc1ychange)}">${dc1ychange}</small></td>
+        <td class="${colorZero(dc2y)}">${dc2y}<br><small class="${colorRates(dc2ychange)}">${dc2ychange}</small></td>
+        <td class="${colorZero(dc3y)}">${dc3y}<br><small class="${colorRates(dc3ychange)}">${dc3ychange}</small></td>
+        <td class="${colorZero(dc5y)}">${dc5y}<br><small class="${colorRates(dc5ychange)}">${dc5ychange}</small></td>
         <td class=""><small>${period}</small></td>
         <td class=""><small>${bank_check}</small></td>
     </tr>
@@ -225,15 +236,15 @@
         <th class="text-nowrap" scope="row">${rank}</th>
         <th class="text-nowrap" scope="row">${gubun}</th>
         <th class="text-nowrap" scope="row">${coName}</th>
-        <td class="">${floatRate}<br><small class="${colorRates(floatRatechange)}">${floatRatechange}</small></td>
-        <td class="">${db1y}<br><small class="${colorRates(db1ychange)}">${db1ychange}</small></td>
-        <td class="">${db2y}<br><small class="${colorRates(db2ychange)}">${db2ychange}</small></td>
-        <td class="">${db3y}<br><small class="${colorRates(db3ychange)}">${db3ychange}</small></td>
-        <td class="">${db5y}<br><small class="${colorRates(db5ychange)}">${db5ychange}</small></td>
-        <td class="">${dc1y}<br><small class="${colorRates(dc1ychange)}">${dc1ychange}</small></td>
-        <td class="">${dc2y}<br><small class="${colorRates(dc2ychange)}">${dc2ychange}</small></td>
-        <td class="">${dc3y}<br><small class="${colorRates(dc3ychange)}">${dc3ychange}</small></td>
-        <td class="">${dc5y}<br><small class="${colorRates(dc5ychange)}">${dc5ychange}</small></td>
+        <td class="${colorZero(floatRate)}">${floatRate}<br><small class="${colorRates(floatRatechange)}">${floatRatechange}</small></td>
+        <td class="${colorZero(db1y)}">${db1y}<br><small class="${colorRates(db1ychange)}">${db1ychange}</small></td>
+        <td class="${colorZero(db2y)}">${db2y}<br><small class="${colorRates(db2ychange)}">${db2ychange}</small></td>
+        <td class="${colorZero(db3y)}">${db3y}<br><small class="${colorRates(db3ychange)}">${db3ychange}</small></td>
+        <td class="${colorZero(db5y)}">${db5y}<br><small class="${colorRates(db5ychange)}">${db5ychange}</small></td>
+        <td class="${colorZero(dc1y)}">${dc1y}<br><small class="${colorRates(dc1ychange)}">${dc1ychange}</small></td>
+        <td class="${colorZero(dc2y)}">${dc2y}<br><small class="${colorRates(dc2ychange)}">${dc2ychange}</small></td>
+        <td class="${colorZero(dc3y)}">${dc3y}<br><small class="${colorRates(dc3ychange)}">${dc3ychange}</small></td>
+        <td class="${colorZero(dc5y)}">${dc5y}<br><small class="${colorRates(dc5ychange)}">${dc5ychange}</small></td>
         <td class=""><small>${period}</small></td>
         <td class=""><small>${bank_check}</small></td>
     </tr>
@@ -275,15 +286,15 @@
         <th class="text-nowrap" scope="row">${rank}</th>
         <th class="text-nowrap" scope="row">${gubun}</th>
         <th class="text-nowrap" scope="row">${coName}</th>
-        <td class="">${floatRate}<br><small class="${colorRates(floatRatechange)}">${floatRatechange}</small></td>
-        <td class="">${db1y}<br><small class="${colorRates(db1ychange)}">${db1ychange}</small></td>
-        <td class="">${db2y}<br><small class="${colorRates(db2ychange)}">${db2ychange}</small></td>
-        <td class="">${db3y}<br><small class="${colorRates(db3ychange)}">${db3ychange}</small></td>
-        <td class="">${db5y}<br><small class="${colorRates(db5ychange)}">${db5ychange}</small></td>
-        <td class="">${dc1y}<br><small class="${colorRates(dc1ychange)}">${dc1ychange}</small></td>
-        <td class="">${dc2y}<br><small class="${colorRates(dc2ychange)}">${dc2ychange}</small></td>
-        <td class="">${dc3y}<br><small class="${colorRates(dc3ychange)}">${dc3ychange}</small></td>
-        <td class="">${dc5y}<br><small class="${colorRates(dc5ychange)}">${dc5ychange}</small></td>
+        <td class="${colorZero(floatRate)}">${floatRate}<br><small class="${colorRates(floatRatechange)}">${floatRatechange}</small></td>
+        <td class="${colorZero(db1y)}">${db1y}<br><small class="${colorRates(db1ychange)}">${db1ychange}</small></td>
+        <td class="${colorZero(db2y)}">${db2y}<br><small class="${colorRates(db2ychange)}">${db2ychange}</small></td>
+        <td class="${colorZero(db3y)}">${db3y}<br><small class="${colorRates(db3ychange)}">${db3ychange}</small></td>
+        <td class="${colorZero(db5y)}">${db5y}<br><small class="${colorRates(db5ychange)}">${db5ychange}</small></td>
+        <td class="${colorZero(dc1y)}">${dc1y}<br><small class="${colorRates(dc1ychange)}">${dc1ychange}</small></td>
+        <td class="${colorZero(dc2y)}">${dc2y}<br><small class="${colorRates(dc2ychange)}">${dc2ychange}</small></td>
+        <td class="${colorZero(dc3y)}">${dc3y}<br><small class="${colorRates(dc3ychange)}">${dc3ychange}</small></td>
+        <td class="${colorZero(dc5y)}">${dc5y}<br><small class="${colorRates(dc5ychange)}">${dc5ychange}</small></td>
         <td class=""><small>${period}</small></td>
         <td class=""><small>${bank_check}</small></td>
     </tr>
@@ -304,7 +315,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap" rel="stylesheet">
 
-    <title>원펀치퇴직연금</title>
+    <title>퇴직연금금리한눈에</title>
 
     <!--    <script data-ad-client="ca-pub-4295741603974812" async-->
     <!--            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
@@ -348,9 +359,10 @@
             font-family: 'Song Myung', serif;
         }
 
+        /* check : rateChange : Stay/ Plus/ Minus*/
 
         .rateStay {
-            color: darkgrey;
+            color: lightgrey;
         }
 
         .ratePlus {
@@ -360,6 +372,27 @@
         .rateMinus {
             color: orangered;
         }
+
+        /*check : rates: Zero/ Int */
+
+        .isZero {
+            color: lightgrey;
+        }
+
+        .isInt {
+            color: black
+        }
+
+        /*check: rates: Bold/ Normal */
+
+        .isBold {
+            font-weight: bold;
+        }
+
+        .isNormal {
+            font-weight: normal;
+        }
+
 
 
     </style>
@@ -450,8 +483,8 @@
     <button type="button" class="btn" style="background-color:seagreen; color:white;">엑셀내리기</button>
 </div>
 <br>
-<table class="table table-bordered table-striped text-center">
-    <thead>
+<table class="table table-bordered table-striped text-center container">
+    <thead class="fixedHeader">
     <tr>
         <th rowspan="2" class="">
             순위
